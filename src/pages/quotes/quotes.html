@@ -21,7 +21,15 @@
             ion-button
             clear
             small
-            (click)="onAddToFavorite(quote)">Favorite</button>
+            (click)="onAddToFavorites(quote)"
+            *ngIf="!isFavorite(quote)">Favorite</button>
+          <button
+            ion-button
+            clear
+            small
+            color="danger"
+            (click)="onRemoveFromFavorites(quote)"
+            *ngIf="isFavorite(quote)">UnFavorite</button>
       </ion-col>
     </ion-row>
   </ion-card>
